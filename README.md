@@ -1,4 +1,4 @@
 # MyFirstRepository
 My first repository on github
 
-I like pizza.
+This repository is for "do it! interactive web page"
