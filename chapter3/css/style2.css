@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+/*순서 선택자(형제 요소의 순서를 이용하여 선택하기)*/
+ul li:nth-of-type(1){
+  border: 1px solid red;
+}
+ul li:nth-of-type(2){
+  border: 1px solid green;
+}
+ul li:nth-of-type(3){
+  border: 1px solid blue;
+}
+ul li:nth-of-type(4){
+  border:1px solid violet;
+}
+
+/*수열 선택자(짝수 요소 선택)*/
+ul li:nth-of-type(2n){
+border: 1px solid blue;
+}
+
+
+/*수열 선택자(3의 배수인 요소 선택)*/
+ul li:nth-of-type(3n){
+  border: 1px solid blue;
+  }
+
+
+/*수열 선택자(홀수 요소 선택)*/
+ul li:nth-of-type(2n-1){
+  border: 1px solid blue;
+  }
+  
+
+/*수열 선택자(마지막 요소 선택)*/
+  ul li:last child{
+    border: 1px solid blue;
+  }
+
+
+/*홀수, 짝수 선택자 이용하기*/
+  ul li:nth-of-type(odd){
+    border: 1px solid blue;
+  }
+   ul li:nth-of-type(even){
+     border: 1px solid red;
+  }
+
+/*속성 선택자 사용하기*/
+input[type="text"]{
+  border: 1px solid blue;
+}
+input[type="password"]{
+  border: 1px solid red;
+}
+
+/*가상 선택자*/
+/*hover는 선택한 요소 위에 마우스포인터를 올렸을 때 스타일 적용*/
+h1{
+  border: 1px solid blue;
+}
+h1:hover{
+  border: 1px solid red;
+}
+
+h1:before{
+  content:"before content";
+  color:blue;
+}
+h1:after{
+  content: "after content";
+  color: red;
+}
+
+
+/*
+클래스 선택자
+같은 이름의 태그가 여러 개 있을 때 태그마다 다른 효과를 주고 싶을 때 class 사용
+*/
+  p.text1{
+    border: 1px solid blue;
+  }
+  .text2{
+    border:1px solid red;
+  }
+
+
+  /*
+  아이디 선택자
+  태그에 고유한 이름을 붙여 특정 기능을 개발하기 위해 사용
+  */
+  #header{
+    border: 1px solid red;
+  }
+  #section{
+    border: 1px solid green;
+  }
+  #footer{
+    border: 1px solid violet;
+  }
