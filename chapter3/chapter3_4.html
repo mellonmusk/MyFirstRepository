@@ -1,0 +1,55 @@
+<!--웹 페이지에서 영역별 크기와 바깥쪽, 안쪽 여백 지정하기-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style3_4.css">
+</head>
+
+<body>
+  <!--태그의 너빗깂과 높잇값 지정-->
+  <article>100px</article>
+  <article>20%</article>  <!--body태그 기준으로 너빗값이 변함. 높잇값은 제대로 동작하지 않음(%단위는 부모 요소 크기에 비례해서 크기를 정해서)-->
+  <article>10vw</article>  <!--웹 브라우저의 너빗값을 백분율로 환산-->
+  <article>10vh</article>  <!--웹 브라우저의 높잇값을 백분율로 환산-->
+
+
+  <!--바깥쪽 여백 지정-->
+  <article>box1</article>
+  <article>box2</article>
+  <article>box3</article>
+  <article>box4</article>
+  <article>box5</article>
+  <article>box6</article>
+  <article>box7</article>
+  <article>box8</article>
+  <article>box9</article>
+
+
+<!--안쪽 여백 지정-->
+<article>box1</article>
+<article>box2</article>
+
+
+<!--테두리의 형태 지정-->
+  <div></div>
+  <div></div>
+  <div></div>
+
+
+<!--블럭 요소와 인라인 요소 비교-->
+<p>
+  블럭 요소 태그는 자동 줄 바꿈 됩니다.
+</p>
+<p>
+  <span>
+    <strong>인라인 요소 태그</strong>들은  <em>좌우로</em> 배치됩니다.
+  </span>
+</p>
+
+</body>
+</html>

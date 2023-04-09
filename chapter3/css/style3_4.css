@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+/*태그의 너빗깂과 높잇값 지정*/
+article{
+  border: 1px solid red;
+}
+article:nth-of-type(1){
+  width: 100px;
+  height: 100px;
+}
+article:nth-of-type(2){
+  width: 20%;   
+  height: 20%;
+}
+article:nth-of-type(3){
+  width: 10vw;
+  height: 10vw;
+}
+article:nth-of-type(4){
+  width: 10vh;
+  height: 10vh;
+}
+
+
+
+/*바깥쪽 여백 지정*/
+article{
+  width: 50px;
+  height: 30px;
+  border: 1px solid red;
+}
+/*바깥쪽 여백을 상하좌우  20px만큼 지정*/
+article:nth-of-type(1){
+  margin: 20px;
+}
+/*바깥쪽 여백을 상하는 20px, 좌우는 50px만큼 지정*/
+article:nth-of-type(2){
+  margin: 20px 50px;
+}
+/*바깥쪽 여백을 상하는 20px만큼, 좌우는 무조건 중앙으로 지정*/
+article:nth-of-type(3){
+  margin: 20px auto;
+}
+/*바깥쪽 여백을 위쪽은 20px, 좌우는 중앙, 아래쪽은 40px만큼 지정*/
+article:nth-of-type(4){
+  margin: 20px auto 40px;
+}
+/*바깥쪽 여백을 시계방향으로 위쪽, 오른쪽, 아래쪽, 왼쪽으로 각각 지정*/
+article:nth-of-type(5){
+  margin: 0px 10px 20px 30px;
+}
+/*바깥쪽 여백을 왼쪽으로 20px만큼 지정*/
+article:nth-of-type(6){
+  margin-left: 20px;
+}
+/*바깥쪽 여백을 오른쪽으로 20px만큼 지정*/
+article:nth-of-type(7){
+  margin-right: 20px;
+}
+/*바깥쪽 여백을 위쪽으로 20px만큼 지정*/
+article:nth-of-type(8){
+  margin-top: 20px;
+}
+/*바깥쪽 여백을 아래쪽으로  20px만큼 지정*/
+article:nth-of-type(9){
+  margin-bottom: 20px;
+}
+
+
+/*안쪽 여백 지정*/
+article{
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+}
+article:nth-of-type(1){
+  padding:0px;
+}
+article:nth-of-type(2){
+  padding: 30px;
+/*
+기존의 박스 크기를 유지하고 싶다면 추가된 padding값만큼 빼면 된다.
+width: 40px
+height:40px
+*/
+/*box sizing: border-box라는 조건을 추가하는 간단한 방법도 있다.*/
+}
+
+
+/*여러가지 테두리 모양 지정*/
+div{
+  width: 300px;
+  height: 200px;
+  border: 50px;
+}
+div:nth-of-type(1){
+  border-width: 1px;
+  border-style: solid;
+  border-color: red;
+  /*
+  한꺼번에 지정하기
+  border: 1px solid red;
+  */
+}
+div:nth-of-type(2){
+  border-width: 5px;
+  border-style: dashed;
+  border-color: green;
+}
+div:nth-of-type(3){
+  border-width: 10px;
+  border-style: dotted;
+  border-color: blue;
+}
+
+
+/*블럭 요소와 인라인 요소 비교*/
+/*블록 요소와 인라인 요소의 크기 지정*/
+p{
+  border: 1px solid red;
+  height: 100px;
+}
+strong, em{
+  border: 1px solid blue;
+  height: 50px;
+  display: inline-block;/*인라인 요소, 블럭 요소의 속성 모두 사용하기*/
+  display: block;/*블럭 요소로 강제 변환*/
+}/*인라인 요소는 높잇값이 적용되지 않음 But 인라인 요소에 너빗값과 높잇값을 강제로 지정해야 할 때가 있음 ->인라인, 블럭 요소를 같이 쓰는 속성 지정 or 인라인 요소를 블럭 요소로 만듦*/
+
+
