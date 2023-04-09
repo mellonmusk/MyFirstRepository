@@ -24,5 +24,36 @@ section{
   width: 200px;
   height: 200px;
   border: 1px solid #000;
-  background-image: url(../알로스3.png);
+  background-image: url(/img/bread.png);
+  background-repeat: no-repeat;/*배경 이미지 반복하지 않고 삽입하기*/
+  background-repeat: repeat-x;/*배경 이미지 가로축으로 반복하기*/
+  background-repeat: repeat-y;/*배경 이미지 세로축으로 반복하기*/
+
+  background-position: center center;/*배경 이미지를 중앙에 배치하기*/
+  background-position: right bottom;/*배경 이미지를 오른쪽 아래에 배치하기*/
+  background-position: 20px 60px;/*배경 이미지를 px로 배치하기*/
+  background-position: 100% 50%;/*배경 이미지를 백분율로 배치하기*/
+}
+
+
+/*배경이미지를 원본 비율로 채우기*/
+section{
+  width: 300px;
+  height: 200px;
+  border: 1px solid #000;
+  background-image: url(/img/알로스3.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+/*배경 이미지를 여백없이 채우기*/
+section{
+  width: 300px;
+  height: 200px;
+  border: 1px solid #000;
+  background-image: url(/img/알로스3.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
