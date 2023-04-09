@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+/*css를 초기화하기 전*/
+article{
+  border: 1px solid red;
+}
+ul li{
+  border: 1px solid blue;
+}
+
+
+/*css를 초기화한 후*/
+*{                                          /*  '*'은 전체 선택자임   */
+  margin: 0px;
+  padding: 0px;
+}
+ul, ol{
+  list-style: none;                   /*목록 앞의 동그라미 기호 없앰*/
+}
+a{
+  text-decoration: none;
+}                                          /*a요소 선택하여 밑줄 제거*/
+
+
+
+/*블럭 요소 만들기*/
+/*float속성 추가하기*/
+.wrap{
+  width: 800px;
+  margin: 100px auto;
+  border: 5px solid black;
+}
+.wrap.left{
+  width: 400px;
+  height: 400px;
+  background-color: pink;
+  float: left;
+}
+.wrap.right{
+  width: 400px;
+  height: 400px;
+  background-color: lightblue;
+  float: right;
+}
+/*자식 요소에 float속성이 적용되더라도 부모요소가 자식요소의 높잇값을 인지할 수 있도록 수정*/
+.wrap::after{/*가상 선택자 ::after생성*/
+  content: ' ';/*빈 문자 삽입 후 block속성으로 강제 변경*/
+  display: block;
+  clear: both;/*부모요소에 float의 영향을 해제*/
+}
+
+
+
+/*position의 relative속성값 사용*/
+section{
+  width: 600px;
+  height: 200px;
+}/*공통된 section의 요소 설정*/
+section:nth-of-type(1){
+  background-color: pink;
+}
+section:nth-of-type(2){
+  background-color: skyblue;
+  position: relative;
+  top: -100px;
+  left: 100px;
+}
+/*position의 absolute속성값 사용*/
+.wrap{
+  width: 800px;
+  border: 5px solid black;
+  margin: 50px auto;
+}
+.wrap::after{ /*가상 선택자로 float의 영향 해제*/
+  content: ' ';
+  display: block;
+  clear: both;
+}
+.wrap.left{
+  width: 400px;
+  height: 400px;
+  background-color: lightgreen;
+  float: left;
+}
+.wrap .right{
+  width: 400px;
+  height: 400px;
+  background-color: lightblue;
+  float: left;
+}
+.wrap .right.box{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position:absolute;
+  right: 20px;
+  bottom: 30px;
+ }
+ .wrap .bottom{
+  width: 800px;
+  height: 100px;
+  background-color: pink;
+  float: left;
+ }
+
+
