@@ -1,0 +1,35 @@
+@charset "utf-8";
+img{
+  width: 1000px; margin: 50px;
+}
+
+article{
+  width: 500px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  padding: 50px;
+  margin: 50px auto;
+}
+article svg{
+  width: 100%;
+}
+
+/*svg의 path스타일 변경*/
+article svg path{
+  fill: transparent;
+  stroke: red;
+  stroke-width: 1;
+}
+
+/*마우스 포인터를 올리면 선이 그려지는 모션 만들기*/
+article svg path{
+  fill: transparent;
+  stroke: red;
+  stroke-width: 2;
+  stroke-dasharray: 1270;
+  stroke-dashoffset: -1270;
+  transition: all 3s;
+}
+article:hover svg path{
+  stroke-dashoffset: 0;
+}
