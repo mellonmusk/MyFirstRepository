@@ -24,3 +24,37 @@ box.addEventListener("mouseenter",()=>{
 box.addEventListener("mouseleave",()=>{
   box.style.backgroundColor="aqua";
 })
+
+
+const list=document.querySelectorAll(".list li");
+
+for(let el of list){
+  el.addEventListener("click",e=>{
+    e.preventDefault();
+    console.log(e.currentTarget.innerText)
+  })
+}//for of문 이용해서 list그룹을 반복하면서 이벤트를 연결
+
+//클릭 이벤트가 발생하면 숫자 증가, 감소하기
+const btnPlus= document.querySelector(".btnPlus");
+const btnMinus= document.querySelector(".btnMinus");
+let num=0;
+
+btnPlus.addEventListener("click",e=>{
+  e.preventDefault();
+  num++;
+  console.log(num);
+})
+
+btnPlus.addEventListener("click",e=>{
+  e.preventDefault();
+  num++;
+  console.log(num);
+})
+
+//문자 안에 변수 삽입하기
+const myName="홍길동";
+console.log("내 이름은 myName입니다.");
+
+console.log(`내 이름은 ${myName}입니다.`);
+
