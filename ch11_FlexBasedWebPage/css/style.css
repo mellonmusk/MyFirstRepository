@@ -1,0 +1,174 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&display=swap');
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul,ol,li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  outline: 0;
+}
+
+main{
+  width: 100%;
+  height: 100vh; /*전체 화면으로 잡아줌*/
+  background: #333;
+  display: flex; /*header와 section을 좌우 배치하기 위해 설정(전체 레이아웃을 flex로 설정하기 위해)*/
+}
+main header{
+  width: 20%;
+  height: 100%;
+  padding: 10vh 5vw;
+  display: flex;
+  flex-wrap: wrap; /*세로로 줄바꿈되도록 처리*/
+  align-content: space-between; /*세로축은 상단 하단 양 끝으로 컨탠츠 배치*/
+  justify-content: center; /*가로축은 가운데로 배치*/
+  position: relative;
+  z-index: 3; /*section요소와 aside팝업 요소보다 위에 배치하기 위해 3을 지정*/
+}
+main header h1{
+  font-size: 0px; /*안쪽 자간과 줄 높이를 최소화(블럭 요소안에 인라인 요소로 컨텐츠를 배티하면 인라인 요소에 불필요한 글자 간격과 줄 높잇값이 추가되는 오류가 있는데, 이를 해결 가능)*/
+  color: #fff;
+}
+main header h1 i{
+  font-size: 5vw;
+  margin-bottom: 15px;
+}
+main header h1 span{
+  font: normal 0.8vw/1 "arial";
+}
+main header address{
+  font: normal 11px/1.2 "arial";
+  color: #888;
+}
+
+main nav{
+  position: absolute;
+  top: 10vh;
+  right: 5vw;
+  z-index: 3; /*section요소와 aside팝업요소보다 위에 배치하기 위해 3을 지정*/
+}
+main nav ul{
+  display: flex;/*자식 li 요소를 좌우 배치되도록 설정*/
+}
+main nav ul li a{
+  font-size: 18px;
+  color: #bbb;
+  margin-right: 30px;
+}
+
+main section{
+  position: relative;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  padding-top: 140px;
+  z-index: 1; /*aside 팝업요소보다 아래에 배치하기 위해 1을 지정*/
+}
+main section article{
+  position: relative;
+  flex: 1; /*모든 article 요소의 너비를 동등하게 적용*/
+  padding: 70px 40px 100px;
+  opacity: 0.6;
+  transition: flex 1s, opacity 1s; /*flex, opacity 속성에만 전환 효과 적용*/
+  z-index: 1; /*호버되지 않을 시 1 설정*/
+  cursor: pointer;
+}
+main section article::before{ /*마우스 호버 시 왼쪽에서 나타날 가상의 패널요소, 배경색보다 밝게 설정한 뒤 absolute로 .inner요소 뒤쪽으로 투명하게 숨겨 놓는다.이 요소는 나중에 article 요소에 마우스를 호버할 때 왼쪽에서 부드럽게 슬라이딩하며 나타나도록 할 것임.*/
+  content:"";
+  display: block;
+  width: 80%;
+  height: 95%;
+  background: #444;
+  position: absolute;
+  top: 0px;
+  left: -200px; /*마우스 호버 전 article의 왼쪽 바깥쪽에 배치*/
+  opacity: 0; /*마우스호버 전 투명하게 숨김처리*/
+  transition: 1s;
+}
+main section article .inner{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;/*.txt와 figure요소를 위아래 끝에 배치함*/
+  position: relative; /*::before 요소 위쪽으로 배치되게 하기 위해 position처리*/
+}
+main section article .inner .txt{
+  width: 100%;
+  transition: 0.5s; /*호버 시 전환 효과 처리*/
+}
+main section article .inner .txt h2{
+  font: normal 2vw/1 "Alegreya Sans SC";
+  color: #fff;
+  margin-bottom: 40px;
+  padding-top: 70px;
+  transition: 1s; /*호버 시 전환 효과 처리*/
+}
+main section article .inner .txt h2::after{
+  /*h2 요소 하단 꾸밈 효과*/
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #777;
+  margin-top: 20px;
+  transition: 1.5s; /*호버 시 전환 효과 처리*/
+}
+main section article .inner .txt p{
+  font: 14px/1.4 "arial";
+  color: #999;
+}
+
+main section article .inner figure{
+  width: 100%;
+  height: 15vh;
+  background: #777;
+  transform-origin: left center; /*왼쪽 방향 기준으로 변형이 일어나도록 중심축 변경*/
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  filter: saturate(100%);
+  transition: 1s;
+}
+main section article .inner figure video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*영상이 figure 영역 안에 꽉 차도록 설정*/
+  transform: scale(1.1); /*영상 가장자리에 여백을 숨기기 위해 약간 확대*/
+}
+
+/*article 영역에 호버효과 적용하기*/
+main section article:hover{
+  flex: 1.5;/*호버된 요소만 너비를 1.5배 증가, 증가하면서 ::before로 숨겨놓은 패널이 왼쪽에서부터 나타나게 설정*/
+  opacity: 1;
+  z-index: 2;
+}
+main section article:hover::before{
+  /*article 요소 hover시 변경구문*/
+  left: 0px;
+  opacity: 1;
+}
+main section article:hover .inner .txt{
+  width: 75%;
+}
+main section article:hover .inner .txt h2{
+  font-size: 5vw;
+  padding-top: 0px;
+}
+main section article:hover .inner .txt h2::after{
+  width: 120px;
+  background: orange;
+}
+main section article:hover .inner figure{
+  height: 25vh;
+  filter: saturate(120%);
+  transform: translateY(3vh);
+}
+
