@@ -40,7 +40,8 @@ figure h1 span{
   line-height: 1;
   letter-spacing: 1px;
 }
-figure .menu{
+
+figure.menu{
   position: absolute;
   top: 8vh;
   right: 4vw;
@@ -94,4 +95,106 @@ figure section article .inner{ /*음악 플레이어 패널 컨텐츠 그룹*/
 figure section  article.on .inner{
   opacity: 0.9;
   transform: scale(1.1);
+}
+figure section article .inner .pic{
+  width: 15vw;
+  height: 15vw;
+  margin: 0px auto;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: 200%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+figure section article .inner .pic::before,
+figure section article .inner .pic::after {
+  content: "";
+  display: block;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: inherit;
+  background-position: center;
+  background-repeat: inherit;
+  background-size: cover;
+  transform-origin: center center;
+}
+figure section article .inner .pic::before {
+  transform: translateY(10%);
+  filter: blur(20px) brightness(1.6); /*이미지를 블러처리하고 밝게 적용*/
+}
+figure section article .inner .pic .dot{
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  background: #e4f1ff;
+  position: relative;
+  z-index: 3;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+figure section article .inner .txt{
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+figure section article .inner .txt h2{
+  font-size: 20px;
+  font-family: "arial";
+  color: #222;
+  margin-bottom: 2vh;
+}
+figure section article .inner .txt p{
+  font-size: 12px;
+  margin-bottom: 3vh;
+  color: #777;
+}
+figure section article .inner .txt ul{
+  display: flex;
+  justify-content: space-around;
+}
+figure section article .inner .txt ul li{
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.5s;
+}
+figure section article .inner .txt ul li.play{
+  transform: scale(1.5);
+  opacity: 0.9;
+}
+figure section article .inner .txt ul li:hover{
+  transform: scale(1.5);
+  opacity: 0.8;
+}
+figure section article .inner .txt ul li.play:hover{
+  transform: scale(2);
+  opacity: 1;
+}
+@keyframes ani{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes ani2{
+  0%{
+    transform: translateY(10%) rotate(0deg);
+  }
+  100%{
+    transform: translateY(10%) rotate(360deg);
+  }
+}
+
+figure section article .inner .pic.on::after{
+  animation: ani 4s linear infinite;
+}
+figure section article .inner .pic.on::before{
+  animation: ani2 4s linear infinite;
 }
