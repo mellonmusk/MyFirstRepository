@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+ul,ol,li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  outline: 0;
+}
+figure{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(25deg,coral, pink );
+}
+figure h1{
+  position: absolute;
+  top: 7vh;
+  left: 4vw;
+  font-size: 0;
+}
+figure h1 strong{
+  font-size: 36px;
+  font-family: "arial";
+  color: #fff;
+  line-height: 1.4;
+  letter-spacing: 1px;
+}
+figure h1 span{
+  font-size: 12px;
+  font-family: "arial";
+  color: #fff;
+  opacity: 0.8;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+figure .menu{
+  position: absolute;
+  top: 8vh;
+  right: 4vw;
+  font-size: 24px;
+  color: #fff;
+}
+figure>p{
+  position: absolute;
+  bottom: 7vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font: 12px/1 "arial";
+  color: #fff;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+figure section{ /*음악 플레이어 패널 프레임 그룹*/
+  width: 20vw;
+  height: 65vh;
+  position: absolute;
+  left: 50%;
+  top: 140%;
+  margin-top: -25vh;
+  margin-left: -10vw;
+}
+
+figure section article{ /*개별 음악 플레이어 패널*/
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+figure section article .inner{ /*음악 플레이어 패널 컨텐츠 그룹*/
+  width: 100%;
+  height: 100%;
+  background: #f0f7ff;
+  padding: 5vh 2.5vw 8vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-content: space-between; /*자식 컨텐츠의 안쪽 세로 여백을 균등 배치*/
+  flex-wrap: wrap;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0.6; /*투명도를 낮춰서 비활성화*/
+  transform: scale(0.8); /*축소시켜서 비활성화*/
+  transition: opacity 1s, transform 1s;
+}
+figure section  article.on .inner{
+  opacity: 0.9;
+  transform: scale(1.1);
+}
