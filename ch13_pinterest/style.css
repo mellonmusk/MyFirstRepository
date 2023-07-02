@@ -80,4 +80,41 @@ header ul li a span{
   transform: scale(0.7) translateX(-10px);
 }/*웹 폰트 아이콘인 i 요소에 비해 span 요소의 글자가 상대적으로 커 보여서 크기를 줄임. 왼쪽 아이콘과 세로 정렬이 틀어지지 않게 크기 조정을 하기 위해 transform: scale 을 사용. translateX로 왼쪽으로 약간 밀어줌.*/
 
-
+main section{
+  width: 100%;
+}
+main section::after{
+  content: ' ';
+  display: block;
+  clear: both;
+}
+main section article {
+  width: 20%;
+  float: left;
+  box-sizing: border-box;
+  padding: 12px;
+}
+main section article div{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  padding: 14px;
+}
+main section article div img {
+  width: 100%;
+}
+margin section article div h2 {
+  margin-top: 15px;
+  font: bold 11px/1 'orbitron';
+  letter-spacing: 1px;
+  color: #444;
+  margin-bottom: 5px;
+}
+main section article div p {
+  font: 10px/1.2 'arial';
+  color: #777;
+  margin-bottom: 15px;
+}
