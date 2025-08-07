@@ -1,4 +1,3 @@
-# MyFirstRepository
-My first repository on github
+# HTML, CSS, JS practice
 
-This repository is for "do it! interactive web page"
+Original source code came from the book "Do it! interactive web page" 
